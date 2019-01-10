@@ -21,7 +21,7 @@ This function loads *YaleDB.mat* and runs SPCA using the [*SpaSM*](https://www.j
 3. Visualize Results with **PlotSPCALoadings.m** and **PlotSPCAScores.m**
 These visualize the SPCA loadings (i.e. the sparse eigen-faces) and the input samples projected onto these sparse directions.
 
-4. Document: *Sparse Eigenfaces: The Effects of Elastic Net Regularization on the Principal Components of Facial Images*
+4. Document: **FinalReport_SPCAFaces.pdf**
 
 ### Prerequisites
 
