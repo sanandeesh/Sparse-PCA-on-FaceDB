@@ -1,6 +1,5 @@
 # Sparse-PCA-on-FaceDB
 This project explores how Principal Component Analysis (PCA) of facial image data is affected by applying Sparse PCA (SPCA) instead. Briefly, SPCA sets to zero uninformative PC-loadings with a recursive algorithm (Zou et al. 2006). In doing so, these 'sparse' PC-loadings separate input samples along their truly distinguishing features  (e.g. pixels) with lesser susceptibility to noisy perturbations along uninformative features (e.g. pixels).
-The 
 
 ## Getting Started
 These two files demonstrate the application of the Extended Kalman Filter to localization of a planar robot.
@@ -37,8 +36,7 @@ The Gaussian posterior density of the planar robot position (the third angle dim
 ## References
 
 Georghiades, A.S. and Belhumeur, P.N. and Kriegman,D.J. 
-[*From Few to Many: Illumination Cone Models for Face Recognition under Variable Lighting and Pose.*]
-(https://ieeexplore.ieee.org/document/927464)
+[*From Few to Many: Illumination Cone Models for Face Recognition under Variable Lighting and Pose*](https://ieeexplore.ieee.org/document/927464).
 IEEE Trans. Pattern Anal. Mach. Intelligence. vol. 23,
 no. 6, pp. 643-660, 2001
 
