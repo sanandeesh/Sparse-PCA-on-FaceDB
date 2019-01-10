@@ -15,7 +15,7 @@ This file contains the [*Yale Extended Face Database B*](https://computervisiono
 The images were parsed from their original format and stored as rows of matrix X.
 The strobe lighting angle (azimuth, elevation) and subject ID are stored as rows of matrix Y.
 
-2. Run Sparse PCA on Input Data with **RunSPCA.m* and *spca_zouhastie.m**
+2. Run Sparse PCA on Input Data with **RunSPCA.m** and **spca_zouhastie.m**
 This function loads *YaleDB.mat* and runs SPCA using the [*SpaSM*](https://www.jstatsoft.org/article/view/v084i10) toolbox from Sjostrand et al. 2010. From SpaSM, the *spca_zouhastie.m* function is used.
 
 3. Visualize Results with **PlotSPCALoadings.m** and **PlotSPCAScores.m**
