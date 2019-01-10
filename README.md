@@ -39,7 +39,12 @@ This entry point function will load the input data and run Sparse PCA.
 Next, run **PlotSPCALoadings.m** and **PlotSPCAScores.m** see how increasing sparsification affects PCA.
 
 ### Example Output
-Shown below are the expected outputs.
+
+![](./Figures/InputDataMatrix.png)
+![](./Figures/LightSourceAngles.png)
+![](./Figures/SPCALoadings.png)
+![](./Figures/SPCAScores_Az.png)
+
 
 
 ## References
