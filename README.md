@@ -1,0 +1,2 @@
+# Sparse-PCA-on-FaceDB
+This project explores how Principal Component Analysis (PCA) of facial image data is affected by applying Sparse PCA (SPCA). Briefly, SPCA sets to zero uninformative PC-loadings with a recursive algorithm (Zou et al. 2006). In doing so, these 'sparse' PC-loadings separate input samples along their truly distinguishing features  (e.g. pixels) with lesser susceptibility to noisy perturbations along uninformative features (e.g. pixels).
