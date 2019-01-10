@@ -39,6 +39,8 @@ This entry point function will load the input data and run Sparse PCA.
 Next, run **PlotSPCALoadings.m** and **PlotSPCAScores.m** see how increasing sparsification affects PCA.
 
 ### Example Output
+1. [**Video of Face Database**](https://www.youtube.com/watch?v=lRHfnbt3Jrc&list=PL9IYlUueNFobHMxW0egfu8OtYBQvWQMW9)
+2. [**Video of Regular Eigen-Faces**](https://www.youtube.com/watch?v=298i8syG_b0&list=PL9IYlUueNFobHMxW0egfu8OtYBQvWQMW9&index=2) (i.e. regular PC-loadings)
 
 ![](./Figures/InputDataMatrix.png)
 ![](./Figures/LightSourceAngles.png)
