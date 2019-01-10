@@ -1,17 +1,31 @@
 # Sparse-PCA-on-FaceDB
-This project explores how Principal Component Analysis (PCA) of facial image data is affected by applying Sparse PCA (SPCA) instead. Briefly, SPCA sets to zero uninformative PC-loadings with a recursive algorithm (Zou et al. 2006). In doing so, these 'sparse' PC-loadings separate input samples along their truly distinguishing features  (e.g. pixels) with lesser susceptibility to noisy perturbations along uninformative features (e.g. pixels).
+Principal component analysis(PCA) is a classical tool in multivariate data analysis for dimensionality reduction. It
+uses vector space transformation to reduce high-dimensional data to lower dimensions. Specifically, it transforms
+the input variables into principal components that corresponds to directions of maximal variance in the dataset.
+Despite being widely used, ordinary PCA suffers from difficulty in interpretation of principal components, which
+are linear combinations of all the original variables. Sparse principal component analysis (SPCA) solved this
+problem by using LASSO(Elastic Net) to produce principal components with sparsity. In this project, we have
+applied both Ordinary PCA and SPCA with the extended Yale face dataset B, and the differences in PC-loading
+and PC-score separabilities were investigated. It was found that sparse PC-sores could separate images
+according to lighting conditions with greater distance than ordinary PC scores.
 
-## Getting Started
-These two files demonstrate the application of the Extended Kalman Filter to localization of a planar robot.
-Briefly, the planar robot state-space is (x,y,theta) in an environment with landmark features existing at (x,y) points. 
-It experiences random perturbations both in the motion it undergoes, and in the measurements it collects.
-*Optimal* estimation combines a priori known motion/measurement models and error parameters to minimize the expected squared error between the true state and estimate of it.
-For a rigorous description of this algorithm as well as aggregate simulation results, please read the document, *EKFLocalization.pdf*.
-Next, download this repository to any directory on you machine. 
+## Directory Contents
+1. Input Data *YaleDB.mat*
+This file contains the [*Yale Extended Face Database B*](https://computervisiononline.com/dataset/1105138686) which was produced by Georghiades et al. 2001.
+The images were parsed from their original format and stored as rows of matrix X.
+The strobe lighting angle (azimuth, elevation) and subject ID are stored as rows of matrix Y.
+
+2. Run Sparse PCA on Input Data with *RunSPCA.m* and *spca_zouhastie.m*
+This function loads *YaleDB.mat* and runs SPCA using the [*SpaSM*](https://www.jstatsoft.org/article/view/v084i10) toolbox from Sjostrand et al. 2010. From SpaSM, the *spca_zouhastie.m* function is used.
+
+3. Visualize Results with *PlotSPCALoadings.m* and *PlotSPCAScores.m*
+These visualize the SPCA loadings (i.e. the sparse eigen-faces) and the input samples projected onto these sparse directions.
+
+4. Document: *Sparse Eigenfaces: The Effects of Elastic Net Regularization on the Principal Components of Facial Images*
 
 ### Prerequisites
 
-This software was developed on Matlab 2016, and requires the *Statistics and Machine Learning Toolbox*.
+This software was developed on Matlab 2016.
 
 ### Installing
 No additonal installation procedures are required.
@@ -20,17 +34,12 @@ No additonal installation procedures are required.
 
 Open Matlab. 
 Navigate the *Current Folder* pane to the root directory of this repository. 
-Run 'mainEKFLocalization.m'.
-This entry point function will initialize the robot and environment state parameters and will orchestrate the discrete time simulation.
-On each simulation iteration, the underlying 'EKFLocalization.m' function in invoked to produce the latest posterior density of state.
+Run 'RunSPCA.m'.
+This entry point function will load the input data and run Sparse PCA.
+Next, run 'PlotSPCALoadings.m' and 'PlotSPCAScores.m' see how increasing sparsification affects PCA.
 
 ### Example Output
-Shown below is an example snapshot of the random dynamic simulation which unfolds.
-The left hand column describes the applied simulation parameters. 
-These include the applied motion commands, and the error parameters associated with motion commands and measurements.
-The large white square depicts the motion of the planar robot as well as the associated observer-estimate of state.
-The equations governing motion and measurement processes are shown on the top left.
-The Gaussian posterior density of the planar robot position (the third angle dimension is not shown) is depicted on the botton left.
+Shown below are the expected outputs.
 
 
 ## References
@@ -40,8 +49,12 @@ Georghiades, A.S. and Belhumeur, P.N. and Kriegman,D.J.
 IEEE Trans. Pattern Anal. Mach. Intelligence. vol. 23,
 no. 6, pp. 643-660, 2001
 
-K. Sj ̈ostrand, L.H. Clemmensen, M. Mørup. [*SpaSM,a Matlab Toolbox for Sparse Analysis and Modeling*](https://www.jstatsoft.org/article/view/v084i10).
+K. Sjostrand, L.H. Clemmensen, M. Mørup. [*SpaSM,a Matlab Toolbox for Sparse Analysis and Modeling*](https://www.jstatsoft.org/article/view/v084i10).
 Journal of Statistical Software, x(x):xxx-xxx, 2010.
+
+H. Zou, T. Hastie, and R. Tibshirani. 
+[*Sparse Principal Component Analysis*](https://web.stanford.edu/~hastie/Papers/spc_jcgs.pdf).
+Stat. 15(2):265-286, 2006.
 
 ## License
 
